@@ -1,7 +1,5 @@
+package org.tux;
 import org.junit.jupiter.api.Test;
-import org.tux.OpenGrape;
-import org.tux.OpenGrapeMetadata;
-import org.tux.OpenGrapeResponseException;
 
 import java.io.IOException;
 
