@@ -8,7 +8,7 @@ public enum OpenGrapeMetadata {
     // Optional Metadata
     AUDIO("audio"), DESCRIPTION("description"), DETERMINER("determiner"),
     LOCALE("locale"), LOCALE_ALTERNATE("locale:alternate"),
-    SITE_NAME("site_name"), VIDEO("video"),
+    SITE_NAME("site_name"), VIDEO("video"), IMAGE_ALT("image:alt"),
 
     // Structured Properties
     IMAGE_URL("image:url"), IMAGE_SECURE_URL("image:secure_url"),
