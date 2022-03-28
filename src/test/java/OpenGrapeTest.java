@@ -1,0 +1,29 @@
+import org.junit.jupiter.api.Test;
+import org.tux.OpenGrape;
+import org.tux.OpenGrapeMetadata;
+import org.tux.OpenGrapeResponseException;
+
+import java.io.IOException;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+
+public class OpenGrapeTest {
+
+    @Test
+    void givenUrl_whenParseOGTag_thenCorrect() {
+        String url = "https://opengraphprotocol.org/";
+        try {
+            OpenGrape og = OpenGrape.fetch(url);
+            String title = og.getValue(OpenGrapeMetadata.TITLE);
+            String description = og.getValue(OpenGrapeMetadata.DESCRIPTION);
+            String image = og.getValue(OpenGrapeMetadata.IMAGE);
+            assertEquals("Open Graph protocol", title);
+            assertEquals("https://ogp.me/logo.png", image);
+            assertEquals("The Open Graph protocol enables any web page to become a rich object in a social graph.", description);
+        } catch (IOException | OpenGrapeResponseException e) {
+            e.printStackTrace();
+            fail();
+        }
+    }
+}
