@@ -1,3 +1,17 @@
-OpenGrape is a Java wrapper for OGP (Open Graph protocol).
+## OpenGrape is a Java wrapper for OGP (Open Graph protocol)
 
 This is Java version of the Swift version here: https://github.com/satoshi-takano/OpenGraph
+
+### Usage:
+
+```java
+String url = "https://opengraphprotocol.org/";
+
+try {
+    OpenGrape og = OpenGrape.fetch(url);
+    String title = og.getValue(OpenGrapeMetadata.TITLE);
+    System.out.println(title);
+} catch (IOException | OpenGrapeResponseException e) {
+    e.printStackTrace();
+}
+```
