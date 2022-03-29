@@ -2,7 +2,6 @@ package io.github.kientux.parser;
 
 import io.github.kientux.OpenGrapeMetadata;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -16,7 +15,7 @@ public class DefaultOpenGrapeParser implements OpenGrapeParser {
         Matcher metatagMatcher = metatagPattern.matcher(htmlString);
         boolean found = metatagMatcher.find();
         if (!found) {
-            return Collections.emptyMap();
+            return new HashMap<>();
         }
 
         metatagMatcher.reset();
