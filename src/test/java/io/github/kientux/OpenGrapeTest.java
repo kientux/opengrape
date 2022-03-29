@@ -1,4 +1,4 @@
-package org.tux;
+package io.github.kientux;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 public class OpenGrapeTest {
 
     @Test
-    void givenUrl_whenParseOGTag_thenCorrect() {
+    public void givenUrl_whenParseOGTag_thenCorrect() {
         String url = "https://opengraphprotocol.org/";
         try {
             OpenGrape og = OpenGrape.fetch(url);

@@ -1,7 +1,7 @@
-package org.tux;
+package io.github.kientux;
 
-import org.tux.parser.DefaultOpenGrapeParser;
-import org.tux.parser.OpenGrapeParser;
+import io.github.kientux.parser.OpenGrapeParser;
+import io.github.kientux.parser.DefaultOpenGrapeParser;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package org.tux;
+package io.github.kientux;
 
 @SuppressWarnings("unused")
 public enum OpenGrapeMetadata {

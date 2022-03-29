@@ -1,6 +1,6 @@
-package org.tux.parser;
+package io.github.kientux.parser;
 
-import org.tux.OpenGrapeMetadata;
+import io.github.kientux.OpenGrapeMetadata;
 
 import java.util.Collections;
 import java.util.HashMap;
