@@ -2,6 +2,15 @@
 
 This is Java version of the Swift version here: https://github.com/satoshi-takano/OpenGraph
 
+### Installation
+```
+<dependency>
+    <groupId>io.github.kientux</groupId>
+    <artifactId>opengrape</artifactId>
+    <version>1.0.1</version>
+</dependency>
+```
+
 ### Usage:
 
 ```java
