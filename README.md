@@ -7,7 +7,7 @@ This is Java version of the Swift version here: https://github.com/satoshi-takan
 <dependency>
     <groupId>io.github.kientux</groupId>
     <artifactId>opengrape</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 </dependency>
 ```
 
