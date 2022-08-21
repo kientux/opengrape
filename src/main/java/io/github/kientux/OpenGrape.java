@@ -16,15 +16,23 @@ import java.util.stream.Collectors;
 public class OpenGrape {
     private final Map<OpenGrapeMetadata, String> source;
 
+    private static final String DEFAULT_USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 12_5_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36";
+
     public OpenGrape(String htmlString, OpenGrapeParser parser) {
         this.source = parser.parse(htmlString);
     }
 
     public static OpenGrape fetch(String url) throws IOException, OpenGrapeResponseException {
+        return fetch(url, DEFAULT_USER_AGENT);
+    }
+
+    public static OpenGrape fetch(String url, String userAgent) throws IOException, OpenGrapeResponseException {
         if (url.endsWith("/")) {
             url = url.substring(0, url.length() - 1);
         }
         HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+        // some URLs need User-Agent header or else HTML source won't contain any OG tags
+        connection.setRequestProperty("User-Agent", userAgent);
         int statusCode = connection.getResponseCode();
         if (statusCode < 200 || statusCode > 300) {
             throw new OpenGrapeResponseException.UnexpectedStatusCode();

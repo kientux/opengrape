@@ -18,6 +18,7 @@ String url = "https://opengraphprotocol.org/";
 
 try {
     OpenGrape og = OpenGrape.fetch(url);
+    // or `OpenGrape.fetch(url, "my custom user-agent")`
     String title = og.getValue(OpenGrapeMetadata.TITLE);
     System.out.println(title);
 } catch (IOException | OpenGrapeResponseException e) {
