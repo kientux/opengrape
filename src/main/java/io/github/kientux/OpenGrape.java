@@ -38,11 +38,13 @@ public class OpenGrape {
             throw new OpenGrapeResponseException.UnexpectedStatusCode();
         }
         InputStream inputStream = connection.getInputStream();
-        String htmlString = new BufferedReader(
-                new InputStreamReader(inputStream, StandardCharsets.UTF_8))
-                .lines()
-                .collect(Collectors.joining("\n"));
-        return new OpenGrape(htmlString, new DefaultOpenGrapeParser());
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
+        String line;
+        StringBuilder htmlString = new StringBuilder();
+        while ((line = reader.readLine()) != null) {
+            htmlString.append(line).append("\n");
+        }
+        return new OpenGrape(htmlString.toString(), new DefaultOpenGrapeParser());
     }
 
     public String getValue(OpenGrapeMetadata metadata) {
