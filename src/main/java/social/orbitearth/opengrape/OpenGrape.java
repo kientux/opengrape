@@ -40,7 +40,7 @@ public class OpenGrape {
         connection.setRequestProperty("User-Agent", userAgent);
         int statusCode = connection.getResponseCode();
         if (statusCode < 200 || statusCode > 300) {
-            throw new OpenGrapeResponseException.UnexpectedStatusCode();
+            throw new OpenGrapeResponseException.UnexpectedStatusCode(statusCode);
         }
         InputStream inputStream = connection.getInputStream();
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
