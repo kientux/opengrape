@@ -1,6 +1,6 @@
-package io.github.kientux.parser;
+package social.orbitearth.opengrape.parser;
 
-import io.github.kientux.OpenGrapeMetadata;
+import social.orbitearth.opengrape.OpenGrapeMetadata;
 
 import java.util.HashMap;
 import java.util.Map;

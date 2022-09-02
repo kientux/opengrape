@@ -1,13 +1,17 @@
-## OpenGrape is a Java wrapper for OGP (Open Graph protocol)
+# OpenGrape is a Java-based Open Graph parser
 
-This is Java version of the Swift version here: https://github.com/satoshi-takano/OpenGraph
+The [Open Graph Protocol](https://opengraphprotocol.org/) is a metadata standard that enables services, 
+like social media applications, to fetch previews of webpages, such as thumbnail images and summaries.
+
+This Orbit Earth OpenGrape is a friendly fork of the excellent [Kientux OpenGrape](https://github.com/kientux/opengrape), 
+which is a Java port of the Swift [OpenGraph](https://github.com/satoshi-takano/OpenGraph).
 
 ### Installation
 ```
 <dependency>
-    <groupId>io.github.kientux</groupId>
+    <groupId>social.orbitearth</groupId>
     <artifactId>opengrape</artifactId>
-    <version>1.0.2</version>
+    <version>[1.0.0,)</version>
 </dependency>
 ```
 
@@ -18,7 +22,8 @@ String url = "https://opengraphprotocol.org/";
 
 try {
     OpenGrape og = OpenGrape.fetch(url);
-    // or `OpenGrape.fetch(url, "my custom user-agent")`
+    // or OpenGrape.fetch(url, "my custom user-agent")
+    // or OpenGrape.fetch(url, 3) with a 3 second timeout
     String title = og.getValue(OpenGrapeMetadata.TITLE);
     System.out.println(title);
 } catch (IOException | OpenGrapeResponseException e) {

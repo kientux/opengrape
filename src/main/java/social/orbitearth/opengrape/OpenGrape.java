@@ -1,7 +1,7 @@
-package io.github.kientux;
+package social.orbitearth.opengrape;
 
-import io.github.kientux.parser.DefaultOpenGrapeParser;
-import io.github.kientux.parser.OpenGrapeParser;
+import social.orbitearth.opengrape.parser.DefaultOpenGrapeParser;
+import social.orbitearth.opengrape.parser.OpenGrapeParser;
 
 import java.io.BufferedReader;
 import java.io.IOException;
