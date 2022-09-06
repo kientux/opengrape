@@ -1,4 +1,4 @@
-package io.github.kientux;
+package social.orbitearth.opengrape;
 
 @SuppressWarnings("unused")
 public enum OpenGrapeMetadata {

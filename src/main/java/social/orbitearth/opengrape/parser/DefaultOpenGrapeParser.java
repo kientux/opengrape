@@ -1,6 +1,8 @@
-package io.github.kientux.parser;
+package social.orbitearth.opengrape.parser;
 
-import io.github.kientux.OpenGrapeMetadata;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import social.orbitearth.opengrape.OpenGrapeMetadata;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,6 +10,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class DefaultOpenGrapeParser implements OpenGrapeParser {
+    private final Logger logger = LoggerFactory.getLogger(getClass());
+
     @Override
     public Map<OpenGrapeMetadata, String> parse(String htmlString) {
         // extract meta tag
@@ -46,10 +50,11 @@ public class DefaultOpenGrapeParser implements OpenGrapeParser {
             String content = contentMatcher.group(1);
 
             OpenGrapeMetadata metadata = OpenGrapeMetadata.withValue(property);
+            logger.debug("Found {} = {}", property, content);
             if (metadata != null) {
                 attributes.put(metadata, content);
             } else {
-                System.err.println("Invalid OG property: " + property);
+                logger.warn("Invalid OG property {}", property);
             }
         }
 
