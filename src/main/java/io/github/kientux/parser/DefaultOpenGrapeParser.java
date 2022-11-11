@@ -22,16 +22,17 @@ public class DefaultOpenGrapeParser implements OpenGrapeParser {
 
         // prepare regular expressions to extract og property and content.
         Pattern propertyPattern = Pattern.compile("\\sproperty=[\"']*og:([a-zA_Z:]+)[\"']*");
-        Pattern contentPattern = Pattern.compile("\\scontent=\\\\*?\"(.*?)\\\\*?\"");
 
         // create attribute dictionary
         Map<OpenGrapeMetadata, String> attributes = new HashMap<>();
         while (metatagMatcher.find()) {
+
             String metatag = metatagMatcher.group();
             Matcher propertyMatcher = propertyPattern.matcher(metatag);
             if (!propertyMatcher.find()) {
                 continue;
             }
+            Pattern contentPattern = Pattern.compile("\\scontent=\\\\*?\"(.*?)\\\\*?\"");
             Matcher contentMatcher = contentPattern.matcher(metatag);
             if (!contentMatcher.find()) {
                 contentPattern = Pattern.compile("\\scontent=\\\\*?'(.*?)\\\\*?'");

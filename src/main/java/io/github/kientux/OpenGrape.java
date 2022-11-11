@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 public class OpenGrape {
     private final Map<OpenGrapeMetadata, String> source;
 
-    private static final String DEFAULT_USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 12_5_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36";
+    private static final String DEFAULT_USER_AGENT = "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_8_4) AppleWebKit/5351 (KHTML, like Gecko) Chrome/36.0.869.0 Mobile Safari/5351";
 
     public OpenGrape(String htmlString, OpenGrapeParser parser) {
         this.source = parser.parse(htmlString);
